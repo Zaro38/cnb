@@ -64,11 +64,17 @@ function completeShutdown(data){
     }
       else if(data.message.slice(0,4) === '!rcs'){
       var userTarget = data.message.slice(5,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
       API.sendChat("「CNB」" + userTarget + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
       cooldown();
     }
       else if(data.message.slice(0,8) === '!helprcs'){
       var userTarget = data.message.slice(9,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
       API.sendChat("「CNB」" + userTarget + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
       cooldown();
     }
@@ -77,31 +83,49 @@ function completeShutdown(data){
     }
       else if(data.message.slice(0,4) === '!adv'){
       var userTarget = data.message.slice(5,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
       API.sendChat("/me " + userTarget + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
       cooldown();
     }
       else if(data.message.slice(0,6) === '!resdj'){
         var userTarget = data.message.slice(7,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
         API.sendChat("「CNB」" + userTarget + " To get the Resident Dj rank, you have to meet the requirements (insert nazr.in URL here). If you meet them, you can then apply here: [link] Note: You must register in order apply.");
         cooldown();
       }
       else if(data.message.slice(0,7) === '!fresdj'){
         var userTarget = data.message.slice(8,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
         API.sendChat("「CNB」" + userName4 + " " + userTarget + " Here is a video that explains how to get Resident Dj the fastest way possible: [nazr link]");
         cooldown();
       }
       else if(data.message.slice(0,6) === '!poke1'){
         var userTarget = data.message.slice(7,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
         API.sendChat("「CNB」:kappa: " + userName + " poked " + userTarget + "! :kappa:");
         cooldown();
       }
       else if(data.message.slice(0,6) === '!poke2'){
       var userTarget = data.message.slice(7,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
       API.sendChat("「CNB」( ͡° ͜ʖ ͡°) " + userName + " poked " + userTarget + "! ( ͡° ͜ʖ ͡°)");
       cooldown();
     }
       else if(data.message.slice(0,6) === '!magic'){
-      var userTarget = data.message.slice(7,255)
+      var userTarget = data.message.slice(7,255);
+      if(userTarget === '<span class="name">@Nuvm</span>'){
+        userTarget = 'Nuvm';
+      }
       API.sendChat( "「CNB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ " + userTarget);
       cooldown();
     }
