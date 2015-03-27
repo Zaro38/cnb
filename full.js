@@ -4,6 +4,9 @@
 //As well as asking for new ones!
  
 //Changelog
+//v0.6.0.5
+//Fixed problem with @Nuvm
+//Added the possibility to get the userTarget with just 1 variable
 //v0.6.0.4
 //Fixed swap and skip to trigger on Bouncer+.
 //v0.6.0.2
@@ -69,6 +72,7 @@ commandWait = true;
 
 function full(data){
   this.data = data;
+  data.message = data.message.replace('<span class="name">@Nuvm</span>','@Nuvm'); //Fix the problem when someone does @Nuvm in the command
   var qkCd = setTimeout(400);
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
@@ -87,6 +91,7 @@ function full(data){
   var userName2 = "[@" + data.un + "]";
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
+  var userTarget = data.message.split(' ')[1] //this gets the first argument of the command ( = the second word of the message), you can use this instead of all the other userTargets
   var userTarget0 = data.message.slice(0,255);
   var userTarget1 = data.message.slice(1,255);
   var userTarget2 = data.message.slice(2,255);
