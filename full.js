@@ -113,10 +113,10 @@ function full(data){
       case'!ping':
         if(userRoleIs0){
           API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
-          cooldownLong();
+          cooldown(26);
         } else if(userRole0){
           API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
-          cooldown();
+          cooldown(12);
         }
       break;
       case'!skip':
@@ -127,12 +127,12 @@ function full(data){
       case'!rcs':
         
         API.sendChat("「NB」RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
-        cooldown();
+        cooldown(12);
       break;
       case'!helprcs':
        
         API.sendChat("「NB」The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
-        cooldown();
+        cooldown(12);
       break;
       case'!blacklists':
        
@@ -143,30 +143,30 @@ function full(data){
       break;
       //case'!adv':
         //API.sendChat("Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-        //cooldown();
+        //cooldown(12);
       //break;
       //case'!spam':
         //API.sendChat("Please don't spam!");
-        //cooldown();
+        //cooldown(12);
       //break;
       case'!resdj':
        
         API.sendChat("「NB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
-        cooldown();
+        cooldown(12);
       break;
       //case'!magic':
         //API.sendChat( "「NB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ ");
-        //cooldown();
+        //cooldown(12);
       //break;
       case'!cmd':
        
         API.sendChat("「NB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !watermelon, !cmd, !credits, !uploaders, !stab, !flirt, !donvoo, !credits, !hug, !pizza");
-        cooldownLong();
+        cooldown(26);
       break;
       case'!nuvm':
         
         API.sendChat("/me http://i1302.photobucket.com/albums/ag137/nelsonmonty/poledancingchicken_zpse9fe4791.gif");
-        cooldownLong();
+        cooldown(26);
       break;
       case'!randomevent':
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," "];
@@ -189,15 +189,15 @@ function full(data){
         if(data.uid === 4537120){
          
           API.sendChat("「NB」I must confess! Donvoo... donvoo has always been the one to be so gentle, caring and smexy. Th-that's why.. :yellow_heart::blue_heart::blush::blue_heart::yellow_heart:");
-          cooldown();
+          cooldown(12);
         } else if(userRole2) {
          
           API.sendChat("「NB」Sorry, this command is not for you.");
-          cooldown();
+          cooldown(12);
         } else {
          
           API.sendChat("「NB」Skrubs can't use this command, sorry. :kappa:");
-          cooldown();
+          cooldown(12);
         }
       break;
       case'!watermelon':
@@ -208,33 +208,33 @@ function full(data){
             API.sendChat("「NB」Kage says: I am the :watermelon: God. ");
             setTimeout(400);
             API.sendChat("「NB」 " + random);
-            cooldown();
+            cooldown(12);
         } else {
          
             API.sendChat("「NB」 " + random);
-            cooldown();
+            cooldown(12);
         }
       break;
       case'!uploaders':
        
         API.sendChat("「NB」Here's a link to the YouTube channels of our staff: [http://donvoo.github.io/uploaders]");
-        cooldownLong();
+        cooldown(26);
       break;
       case'https://33.media.tumblr.com/0f3e68fc2dd193659ff12b4555333a9f/tumblr_myr7fcu22U1rhqawao1_500.gif':
        
         API.sendChat("/me 「NB」☢Flandre Scarlet uses ClearChat!☢");
-        cooldownLong();
+        cooldown(26);
       break;
       case'!credits':
        
         API.sendChat("「NB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
-        cooldown();
+        cooldown(12);
       break;
       case'!fruit':
         var fruits = ["an :apple:apple:apple:!","a :watermelon:watermelon:watermelon:!","a :banana:banana:banana:!","a :pineapple:pineapple:pineapple:!","a :strawberry:strawberry:strawberry:!","a :peach:peach:peach:!"];
         var fruitSelection = fruits[Math.floor(Math.random()*fruits.length)];
           API.sendChat("「NB」" + userName + " plunged his/her hand into the fruit basket.... and found " + fruitSelection);
-          cooldown();
+          cooldown(12);
       break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
@@ -242,11 +242,11 @@ function full(data){
         if(userRoleIs0){
          
           API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
-          cooldownLong();
+          cooldown(26);
         } else if(userRole0){
          
           API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
-          cooldown();
+          cooldown(12);
         }
       break;
       case'!swap':
@@ -257,12 +257,12 @@ function full(data){
       case'!rcs':
        
         API.sendChat("「NB」" + userTarget5 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
-        cooldown();
+        cooldown(12);
       break;
       case'!helprcs':
        
         API.sendChat("「NB」" + userTarget9 + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
-        cooldown();
+        cooldown(12);
       break;
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
@@ -270,42 +270,42 @@ function full(data){
       case'!adv':
        
         API.sendChat("「NB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-        cooldown();
+        cooldown(12);
       break;
       case'!spam':
        
         API.sendChat("「NB」" + userTarget6 + ", please don't spam.");
-        cooldown();
+        cooldown(12);
       break;
       case'!resdj':
        
         API.sendChat("「NB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
-        cooldown();
+        cooldown(12);
       break;
       case'!poke1':
        
         API.sendChat("「NB」:kappa: " + userName + " poked " + userTarget7 + "! :kappa:");
-        cooldown();
+        cooldown(12);
       break;
       case'!poke2':
        
         API.sendChat("「NB」( ͡° ͜ʖ ͡°) " + userName + " poked " + userTarget7 + "! ( ͡° ͜ʖ ͡°)");
-        cooldown();
+        cooldown(12);
       break;
       case'!magic':
        
         API.sendChat( "「NB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ " + userTarget7);
-        cooldown();
+        cooldown(12);
       break;
       case'!hug':
        
         API.sendChat("「NB」" + userName + " gives a hug to " + userTarget5 + " !");
-        cooldown();
+        cooldown(12);
       break;
       case'!cmd':
        
         API.sendChat("「NB」" + userTarget5 + " Commands: !call, !watermelon, !credits, !cmd, !donvoo, !uploaders, !nattvoo. Commands requiring @user: !rcs, !helprcs, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !hug, !stab, !flirt, !pizza");
-        cooldownLong();
+        cooldown(26);
       break;
       case'!pizza':
         if(data.uid === 3430555){
@@ -313,11 +313,11 @@ function full(data){
           API.sendChat("「NB」:pizza::pizza: Pizza for @HiBiscuits! :pizza::pizza:");
           
           API.sendChat("「NB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
-          cooldown();
+          cooldown(12);
         } else {
          
           API.sendChat("「NB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
-          cooldown();
+          cooldown(12);
         }
       break;
       case'!flirt':
@@ -326,11 +326,11 @@ function full(data){
         if(userRole0){
          
           API.sendChat("「NB」" + userName + " says to " + userTarget7 + ": Hey smexy, " + selection);
-          cooldown();
+          cooldown(12);
         } else {
          
           API.sendChat("「NB」" + userName + " says to " + userTarget7 + ": Hey, " + selection);
-          cooldown();
+          cooldown(12);
         }
       break;
       case'!stab':
@@ -339,66 +339,69 @@ function full(data){
           var random2 = choose5[Math.floor(Math.random()*choose5.length)];
           
           API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random2);
-          cooldownShort();
+          cooldown(7);
         } else if(userRole2){
           var choose2 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random3 = choose2[Math.floor(Math.random()*choose2.length)];
           
           API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random3);
-          cooldown();
+          cooldown(12);
         } else if(userRole1) {
           var choose3 = [', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random4 = choose3[Math.floor(Math.random()*choose3.length)];
           
           API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random4);
-          cooldown();
+          cooldown(12);
         } else if(userRole0) {
           var choose4 = [', and succeeded!"',', but failed!"'];
           var random5 = choose4[Math.floor(Math.random()*choose4.length)];
           
           API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random5);
-          cooldown();
+          cooldown(12);
         } else if(userRoleIs0){
           var choose6 = [', and succeeded!"',', but failed!"',', but failed!"'];
           var random6 = choose6[Math.floor(Math.random()*choose6.length)];
           
           API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random6);
-          cooldown();
+          cooldown(12);
         } else {
           var choose7 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random7 = choose7[Math.floor(Math.random()*choose7.length)];
           
           API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random7);
-          cooldownShort();
+          cooldown(7);
         }
       break;
       case'!fresdj':
        
         API.sendChat("「NB」" + userName4 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
-        cooldown();
+        cooldown(12);
       break;
       case'!natvoo':
         var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
         var soRandom = plsChoose[Math.floor(Math.random()*plsChoose.length)];
         
         API.sendChat("「NB」" + userName + soRandom);
-        cooldownLong();
+        cooldown(26);
       break;
     }
   }
 }
-  function cooldown() {
+
+function cooldown(sec) {
   commandWait = false;
-  setTimeout(function(){commandWait=true;},12000);
+  var ms = sec * 1000;
+  setTimeout(function(){commandWait=true;},ms);
 }
-function cooldownShort() {
+/*
+function cooldown(7) {
   commandWait = false;
   setTimeout(function(){commandWait=true;},7000);
 }
-function cooldownLong() {
+function cooldown(26) {
   commandWait = false;
   setTimeout(function(){commandWait=true;},26000);
-}
+}*/
 function toAtOrNotToAt(){
   message = data.message;
   if (message.indexOf !== -1){
