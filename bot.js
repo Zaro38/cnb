@@ -4,12 +4,14 @@
 //As well as asking for new ones!
  
 //Changelog
+//v1.3
+//Added individual cooldown system
 //v1.2.4
 //Patched alot of commands.
 //Released the github readme for commands.
 //Added the mehspam command.
 //Many, many fixes.
-//{v1.2
+//v1.2
 //Utility Mode is now the mode by Default.
 //v1.1
 //Many major fixes, including command fixes.
@@ -25,6 +27,72 @@
 
 API.on(API.CHAT,utility);
 commandWait = true;
+
+var commands = {
+	'ping' : {
+		'cooldown' : false
+	},
+	'fresdj' : {
+		'cooldown' : false
+	},
+	'rcs' : {
+		'cooldown' : false
+	},
+	'helprcs' : {
+		'cooldown' : false
+	},
+	'blacklist' : {
+		'cooldown' : false
+	},
+	'call' : {
+		'cooldown' : false
+	},
+	'spam' : {
+		'cooldown' : false
+	},
+	'mehspam' : {
+		'cooldown' : false
+	},
+	'resdj' : {
+		'cooldown' : false
+	},
+	'cmd' : {
+		'cooldown' : false
+	},
+	'disable' : {
+		'cooldown' : false
+	},
+	'uploaders' : {
+		'cooldown' : false
+	},
+	'ships' : {
+		'cooldown' : false
+	},
+	'img' : {
+		'cooldown' : false
+	},
+	'credits' : {
+		'cooldown' : false
+	},
+	'test' : {
+		'cooldown' : false
+	},
+	'randomevent' : {
+		'cooldown' : false
+	},
+	'enable derpstaff' : {
+		'cooldown' : false
+	},
+	'donvoo' : {
+		'cooldown' : false
+	},
+	'makenightcore' : {
+		'cooldown' : false
+	},
+	'join' : {
+		'cooldown' : false
+	}
+}
 function utility(data){
   this.data = data;
   var qkCd = setTimeout(function(){},600);
@@ -65,105 +133,142 @@ function utility(data){
     }
     switch(data.message){
       case'!ping':
-        if(userRole0){
-          API.sendChat("「UB」" + userName2 + " Pong!");
-          cooldown();
-        }
+		if(checkCooldown('ping')) {
+			if(userRole0){
+				API.sendChat("「UB」" + userName2 + " Pong!");
+				cooldownInv('ping',7);
+			}
+		}
       break;
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName4 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
-        },600);
-        cooldown();
+		if(checkCooldown('fresdj')) {
+			setTimeout(function(){API.sendChat("「UB」" + userName4 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
+			},600);
+			cooldownInv('fresdj',7);
+		}
       break;
       case'!rcs':
-        setTimeout(function(){API.sendChat("「UB」RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
-        },600);
-        cooldown();
+		if(checkCooldown('rcs')) {
+			setTimeout(function(){API.sendChat("「UB」RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
+			},600);
+			cooldownInv('rcs',7);
+		}
       break;
       case'!helprcs':
+	  if(checkCooldown('helprcs')) {
         setTimeout(function(){API.sendChat("「UB」The menu for RCS is located at the top right. For more info, visit: [https://rcs.radiant.dj] .");
         },600);
-        cooldown();
+        cooldownInv('helprcs',7);
+	  }
       break;
       case'!blacklist':
+	  if(checkCooldown('blacklist')) {
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
       },600);
-      cooldown();
+      cooldownInv('blacklist',7);
+	  }
         break;
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
       case'!adv':
+	  if(checkCooldown('adv')) {
         if(userRole0){
           setTimeout(function(){API.sendChat("「UB」Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
           },600);
         }
-        cooldown();
+        cooldownInv('adv',7);
+	  }
       break;
       case'!spam':
+	  if(checkCooldown('spam')) {
         if(userRole0){
           setTimeout(function(){API.sendChat("「UB」Please don't spam!");
           },600);
         }
-        cooldown();
+        cooldownInv('spam',7);
+	  }
       break;
       case'!mehspam':
+	  if(checkCooldown('mehspam')) {
         if(userRole0){
           setTimeout(function(){API.sendChat("「UB」Please don't spam the meh button.");
           },600);
         }
-        cooldown();
+        cooldownInv('mehspam',7);
+	  }
       break;
       case'!resdj':
+	  if(checkCooldown('resdj')) {
         setTimeout(function(){API.sendChat("「UB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         },600);
-        cooldown();
+        cooldownInv('resdj',7);
+	  }
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !cmd, !credits, !uploaders, !blacklists");
+	  if(checkCooldown('cmd')) {
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: [http://nazr.in/UF1]");
         },600);
-        cooldown();
+        cooldownInv('cmd',7);
+	  }
       break;
       case'!disable':
+	  if(checkCooldown('disable')) {
         if(data.uid === 5010460){
             API.off(API.CHAT,utility);
             setTimeout(function(){API.sendChat("/me 「NB Utility」was disabled.");
           },600);
-            }
+        }
         else if(userRole2 && data.uid !== 3684485){
             API.off(API.CHAT,utility);
             setTimeout(function(){API.sendChat("/me 「NB Utility」was disabled.");},600);
-            }
+		}
+		cooldownInv('disable',7)
+	  }
       break;
       case'!uploaders':
+	  if(checkCooldown('uploaders')) {
         setTimeout(function(){API.sendChat("「UB」Here's a link to the YouTube channels of our staff: [http://donvoo.me/uploaders]");},600);
-        cooldown();
+        cooldownInv('uploaders',7);
+	  }
       break;
       case'!ships':
+	  if(checkCooldown('ships')) {
         setTimeout(function(){API.sendChat("「UB」Here's a link to the Ships in this room: [http://donvoo.me/Ships]");},600);
-        cooldown();
+        cooldownInv('ships',7);
+	  }
       break;
       case'https://33.media.tumblr.com/0f3e68fc2dd193659ff12b4555333a9f/tumblr_myr7fcu22U1rhqawao1_500.gif':
+	  if(checkCooldown('img')) {
         API.sendChat("/me 「UB」☢Lily White uses ClearChat!☢");
-        cooldown();
+        cooldownInv('img',7);
+	  }
       break;
       case'!credits':
+	  if(checkCooldown('credits')) {
         setTimeout(function(){API.sendChat("「UB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
         },600);
-        cooldown();
+        cooldownInv('credits',7);
+	  }
       break;
       case'!test':
+	  if(checkCooldown('test')) {
         setTimeout(function () {API.chatLog("This should be the first message.");},1000);
         setTimeout(function(){API.chatLog("This should be the second message.");},3000);
         setTimeout(function(){API.chatLog("This should be the third message.");},5000);
+		cooldownInv('test',7);
+	  }
       break;
       case'!randomevent':
+	  if(checkCooldown('randomevent')) {
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."];
         var randomAnswer = randomEvent[Math.floor(Math.random()*randomEvent.length)];
         setTimeout(function(){API.sendChat("「UB」" + userName + randomAnswer);},600);
-        cooldown();
+        cooldownInv('randomevent',7);
+	  }
       break;
       case'!enable derpstaff':
+	  if(checkCooldown('enable derpstaff')) {
         if(confirm(data.un + "(" + data.uid + ") wants to enable {extra.js}.") === true){
           if(data.uid === 5010460){
             $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
@@ -173,83 +278,111 @@ function utility(data){
             API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
           }
         }
+		cooldownInv('enable derpstaff',7);
+	  }
       break;
       case'!donvoo':
+	  if(checkCooldown('donvoo')) {
         if(data.uid === 4537120){
          setTimeout(function(){API.sendChat("「UB」I must confess! Donvoo... donvoo has always been the one to be so gentle, caring and smexy. Th-that's why.. :yellow_heart::blue_heart::blush::blue_heart::yellow_heart:");
           },600);
-          cooldown();
+          cooldownInv('donvoo',7);
         } else {
          setTimeout(function(){API.sendChat("「UB」Sorry, this command is not for you.");
           },600);
-          cooldown();
+          cooldownInv('donvoo',7);
         }
+	  }
       break;
       case'!makenightcore':
+	  if(checkCooldown('makenightcore')) {
         setTimeout(function(){API.sendChat("「UB」Here's a link that explains how to make nightcore: [http://nazr.in/UEM]");},600);
-        cooldown();
+        cooldownInv('makenightcore',7);
+	  }
       break;
       case'!join':
+	  if(checkCooldown('join')) {
         setTimeout(function(){API.sendChat("「UB」" + userName + ", this isn't Tastycat! (This command does not exist)");},600);
-        cooldown();
+        cooldownInv('join',7);
+	  }
       break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
+	  if(checkCooldown('fresdj')) {
         setTimeout(function(){API.sendChat("「UB」" + userName4 + " " + userTarget7 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
         },600);
-        cooldown();
+        cooldownInv('fresdj',7);
+	  }
       break;
       case'!rcs':
+	  if(checkCooldown('rcs')) {
         setTimeout(function(){API.sendChat("「UB」" + userTarget5 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         },600);
-        cooldown();
+        cooldownInv('rcs',7);
+	  }
       break;
       case'!helprcs':
+	  if(checkCooldown('helprcs')) {
         setTimeout(function(){API.sendChat("「UB」" + userTarget9 + " The menu for RCS is located at the top right. For more info, visit: [https://rcs.radiant.dj] .");
         },600);
-        cooldown();
+        cooldownInv('helprcs',7);
+	  }
       break;
       case'!adv':
+	  if(checkCooldown('adv')) {
         if(userRole0){
           setTimeout(function(){API.sendChat("/me 「UB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
           },600);
         }
-        cooldown();
+        cooldownInv('adv',7);
+	  }
       break;
       case'!spam':
+	  if(checkCooldown('spam')) {
         if(userRole0){
           setTimeout(function(){API.sendChat("/me 「UB」" + userTarget6 + ", please don't spam.");
           },600);
         }
-        cooldown();
+        cooldownInv('spam',7);
+	  }
       break;
       case'!mehspam':
+	  if(checkCooldown('mehspam')) {
         if(userRole0){
           setTimeout(function(){API.sendChat("/me 「UB」" + userTarget9 + ", please don't spam the meh button.");
           },600);
         }
-        cooldown();
+        cooldownInv('mehspam',7);
+	  }
       break;
       case'!resdj':
+	  if(checkCooldown('resdj')) {
         setTimeout(function(){API.sendChat("「UB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         },600);
-        cooldown();
-      break;
-      case'!theme2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
-        },600);
-        cooldown();
-      break;
-      case'!rules2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
-        },600);
-        cooldown();
+        cooldownInv('resdj',7);
+	  }
       break;
     }
   }
 }
-  function cooldown() {
+function cooldownInv(cmd,s) {
+	commands[cmd].cooldown = true;
+	ms = s * 1000;
+	setTimeout(stopCooldownInv,ms,cmd);
+	//API.chatLog('cooling down !' + cmd + ' for ' + s + ' seconds');
+}
+function stopCooldownInv(cmd) {
+	commands[cmd].cooldown = false;
+	//API.chatLog('stopped cooldown for !' + cmd);
+}
+function checkCooldown(cmd) {
+	/*if(commands[cmd].cooldown) {
+		API.chatLog('not running !' + cmd + '; cooldown is active');
+	}*/
+	return !commands[cmd].cooldown;
+}
+/*function cooldown() {
   commandWait = false;
   setTimeout(function(){commandWait=true;},7000);
 }
@@ -260,7 +393,7 @@ function cooldownShort() {
 function cooldown() {
   commandWait = false;
   setTimeout(function(){commandWait=true;},18000);
-}
+}*/
 function toAtOrNotToAt(){
   message = data.message;
   if (message.indexOf !== -1){
